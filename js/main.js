@@ -24,10 +24,10 @@ function start() {
 
 function update() {
   if(halfSecond == 0) {
-    $('#collon').css('visibility','visible');
+    $('.collon').css('visibility','visible');
     //updateSecond();
   } else {
-    $('#collon').css('visibility','hidden');
+    $('.collon').css('visibility','hidden');
 
   }
   halfSecond = (halfSecond+1) % 2;
@@ -55,11 +55,11 @@ function updateMinute() {
 function updateElement(time_type) {
   switch (time_type) {
     case "hour":
-    id = "#hour"
+    id = ".hour"
     z = clockHour;
     break;
     case "minute":
-    id = "#minute"
+    id = ".minute"
     z = clockMinute;
     break;
     default:
