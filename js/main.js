@@ -8,6 +8,20 @@ var clockMinute; // 表示している分
 var timerInterval = 500; // 500msごとに計時
 var halfSecond = 0; // 500msごとに0と1を切り替え
 
+var colorLi = {
+  "Alkali metals": "#FF6666",
+  "Alkaline earth metals": "#FFDEAD",
+  "Lanthanides": "#FFBFFF",
+  "Actinides": "#FF99CC",
+  "Transition metals": "#FFC0C0",
+  "Post-transition metals": "#CCCCCC",
+  "Metalloids": "#CCCC99",
+  "Other non-metals": "#A0FFA0",
+  "Halogens": "#FFFF99",
+  "Noble gases": "#C0FFFF",
+  "Unknown chemical properties": "#E8E8E8",
+}
+
 function getNowDate() {
   now = new Date();
   hour = now.getHours(); // 時
@@ -67,43 +81,7 @@ function updateElement(time_type) {
     z = 0;
     break;
   }
-  switch (elementLi[z]["type"]) {
-    case "Alkali metals":
-    color = "#FF6666";
-    break;
-    case "Alkaline earth metals":
-    color = "#FFDEAD";
-    break;
-    case "Lanthanides":
-    color = "#FFBFFF";
-    break;
-    case "Actinides":
-    color = "#FF99CC";
-    break;
-    case "Transition metals":
-    color = "#FFC0C0";
-    break;
-    case "Post-transition metals":
-    color = "#CCCCCC";
-    break;
-    case "Metalloids":
-    color = "#CCCC99";
-    break;
-    case "Other non-metals":
-    color = "#A0FFA0";
-    break;
-    case "Halogens":
-    color = "#FFFF99";
-    break;
-    case "Noble gases":
-    color = "#C0FFFF";
-    break;
-    case "Unknown chemical properties":
-    color = "#E8E8E8";
-    break;
-    default:
-    color = "#FFFFFF";
-  }
+  color = colorLi[elementLi[z]["type"]] || '#FFFFFF';
   $(id).html(elementLi[z]["Sym"]);
   $(id).css('background','-moz-linear-gradient(left top, '+color+', #666)');
   $(id).css('background','-webkit-gradient(linear, left top, right bottom, from('+color+'), to(#666))');
