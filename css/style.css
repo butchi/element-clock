@@ -34,8 +34,16 @@
 
   text-indent: -9999px;
 
-  z-index: 2;}
+  z-index: 2;
 
+  opacity: 0;
+    -webkit-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+  }
+
+  .collon.show {
+    opacity: 1;
+  }
   .collon--1 {
     left: 100px;
   }

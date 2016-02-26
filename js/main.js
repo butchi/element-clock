@@ -41,9 +41,9 @@
     var showColon = millisecond < 500;
 
     if(showColon) {
-      $('.collon').show();
+      $('.collon').addClass('show');
     } else {
-      $('.collon').hide();
+      $('.collon').removeClass('show');
     }
 
     if(hour !== clockHour) {
