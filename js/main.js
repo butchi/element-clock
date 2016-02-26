@@ -3,9 +3,11 @@
 
   var clockHour; // 表示している時
   var clockMinute; // 表示している分
+  var clockSecond; // 表示している秒
 
   var $elementHour = $('.element.hour');
   var $elementMinute = $('.element.minute');
+  var $elementSecond = $('.element.second');
 
   var colorLi = {
     "Alkali metals": "#FF6666",
@@ -24,6 +26,8 @@
   function initialize() {
     $elementHour.on('change', updateElement);
     $elementMinute.on('change', updateElement);
+    $elementSecond.on('change', updateElement);
+
     requestAnimationFrame(update);
   }
 
@@ -31,7 +35,7 @@
     var now = new Date();
     var hour = now.getHours();
     var minute = now.getMinutes();
-    // var second = now.getSeconds();
+    var second = now.getSeconds();
     var millisecond = now.getMilliseconds();
 
     var showColon = millisecond < 500;
@@ -40,7 +44,6 @@
       $('.collon').show();
     } else {
       $('.collon').hide();
-
     }
 
     if(hour !== clockHour) {
@@ -50,6 +53,10 @@
     if(minute !== clockMinute) {
       clockMinute = minute;
       $elementMinute.trigger('change', clockMinute);
+    }
+    if(second !== clockSecond) {
+      clockSecond = second;
+      $elementSecond.trigger('change', clockSecond);
     }
 
     requestAnimationFrame(update);
