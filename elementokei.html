@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- 01 secondly_happy12より。時計のテンプレート -->
+<!-- 02 元素記号を表示 -->
 <html lang="ja">
 	<head>
 		<meta charset="utf-8">
@@ -15,6 +15,8 @@ var clockMinute; // 表示している分
 //var second = 60; // 秒
 var timerInterval = 500;
 var halfSecond = 0;
+
+var elementSymbol = ["St", "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr"];
 
 function getNowDate() {
 	now = new Date();
@@ -51,12 +53,12 @@ function update() {
 
 function updateHour() {
 	clockHour = hour;
-	$('#hour').html(hour);
+	$('#hour').html(elementSymbol[clockHour]);
 }
 
 function updateMinute() {
 	clockMinute = minute;
-	$('#minute').html(minute);
+	$('#minute').html(elementSymbol[clockMinute]);
 }
 
 </script>
