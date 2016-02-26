@@ -5,19 +5,18 @@
 <meta charset="utf-8">
 <link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
 <title>元素時計</title>
+<link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body onLoad="start();">
-	<table>
-		<tr>
-			<td class="element hour"></td>
-			<td class="collon">:</td>
-			<td class="element minute"></td>
-		</tr>
-	</table>
+<body>
+  <div class="wrapper">
+    <div class="element hour"></div>
+    <div class="collon">:</div>
+    <div class="element minute"></div>
+  </div>
 
-<script src="js/lib/jquery.min.js"></script>
-<script src="js/element-list.js"></script>
-<script src="js/main.js"></script>
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/element-list.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

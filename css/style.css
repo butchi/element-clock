@@ -1,22 +1,58 @@
 .element {
-  width:100px;
-  height:100px;
-  color:#333333;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  color: #333;
   font-family: 'Actor', sans-serif;
-  font-size:70px;
+  font-size: 60px;
+  line-height: 100px;
   text-align: center;
   vertical-align: middle;
   text-shadow: 2px 2px 2px #000;
   background: -moz-linear-gradient(left top, #fff, #666); /* Firefox用 */
   background: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#666)); /* Safari,Google Chrome */
-  -moz-box-shadow: 3px 3px 6px #000; /* Firefox用 */
-  -webkit-box-shadow: 3px 3px 6px #000; /* Safari,Google Chrome用 */
-}
+  box-shadow: 2px 2px 4px #000;
+
+  z-index: 1;}
+
+  .element.hour {
+    left: 0;
+  }
+
+  .element.minute {
+    left: 100px;
+  }
 
 .collon {
+  position: absolute;
+
+  left: 100px;
+
   height:100px;
-  font-size:70px;
-  font-family: 'Actor', sans-serif;
-  text-align: center;
-  vertical-align: middle;
-}
+
+  text-indent: -9999px;
+
+  z-index: 2;}
+
+  .collon:before, .collon:after {
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    left: 0;
+    margin-top: -5px;
+    margin-left: -5px;
+
+    border-radius: 10px;
+    background-color: #000;
+    opacity: 0.3;
+  }
+  .collon:before {
+    top: 35%;
+  }
+  .collon:after {
+    top: 65%;
+  }
